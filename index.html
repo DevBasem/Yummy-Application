@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- |=============================================| Website Title |========================================| -->
+    <title>Yummy</title>
+    <!-- |=============================================| Website Favicon |======================================| -->
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <!-- |=============================================| Bootstrap CSS |========================================| -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- |=============================================| Font Awesome |=========================================| -->
+    <link rel="stylesheet" href="assets/icons/css/all.min.css">
+    <!-- |=============================================| Main CSS |=============================================| -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="d-flex">
+    <!-- |=============================================| Application |==============================| -->
+
+    <!-- ~~~~~~~~~~~~~~~~ NavBar ~~~~~~~~~~~~~~~~~~~~~~ -->
+    <header>
+        <div class="nav-handler" id="navHandler">
+            <button class="home" id="homeBtn"><img src="assets/images/logo.png" height="60" alt="home icon"></button>
+            <button class="state open-btn" id="navOpen"><i class="fa-solid fa-bars"></i></button>
+            <button class="state close-btn" id="navClose"><i class="fa-solid fa-xmark"></i></button>
+            <div class="social">
+                <i class="fa-solid fa-globe"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+            </div>
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+            <div class="nav-content" id="navContent">
+                <div class="nav-links">
+                    <button class="nav-link" id="searchBtn">Search</button>
+                    <button class="nav-link" id="categoriesBtn">Categories</button>
+                    <button class="nav-link" id="areaBtn">Area</button>
+                    <button class="nav-link" id="ingredientsBtn">Ingredients</button>
+                    <button class="nav-link" id="contactBtn">Contact Us</button>
+                </div>
+                <footer class="footer">
+                    <div class="social-links">
+                        <div class="nav-icon"><i class="fa-brands fa-facebook"></i></div>
+                        <div class="nav-icon"><i class="fa-brands fa-twitter"></i></div>
+                        <div class="nav-icon"><i class="fa-solid fa-globe"></i></div>
+                    </div>
+                    <p>Copyright Reserved DevBasem © 2024 All Rights Reserved.</p>
+                </footer>
+            </div>
+        </nav>
+    </header>
+    <!-- ~~~~~~~~~~~~~~~~ Dummy NavBar ~~~~~~~~~~~~~~~~ -->
+    <div class="dummy-nav"></div>
+    <!-- ~~~~~~~~~~~~~~~~ Main Content ~~~~~~~~~~~~~~~~ -->
+    <main class="main-content flex-grow-1 d-none" id="mainContent">
+        <div class="container">
+            <div class="row g-4" id="foodCardParent"></div>
+        </div>
+    </main>
+    <!-- ~~~~~~~~~~~~~~~~ Categories Content ~~~~~~~~~~ -->
+    <section class="categories-content main-content flex-grow-1 d-none" id="catContent">
+        <div class="container">
+            <div class="row g-4" id="foodCardCatParent"></div>
+        </div>
+    </section>
+    <!-- ~~~~~~~~~~~~~~~~ Area Content ~~~~~~~~~~~~~~~~ -->
+    <section class="area-content sec-padding flex-grow-1 d-none" id="areaContent">
+        <div class="container">
+            <div class="row g-4" id="foodCardAreaParent"></div>
+        </div>
+    </section>
+    <!-- ~~~~~~~~~~~~~~~~ Ingredients Content ~~~~~~~~~ -->
+    <section class="ingredients-content sec-padding flex-grow-1 d-none" id="ingredContent">
+        <div class="container">
+            <div class="row g-4" id="foodCardIngredParent"></div>
+        </div>
+    </section>
+    <!-- ~~~~~~~~~~~~~~~~ Food Details ~~~~~~~~~~~~~~~~ -->
+    <section class="food-info flex-grow-1 d-none" id="foodInfo">
+        <div class="container">
+            <div class="food-info-close-btn" id="closeBtnInfoParent"></div>
+            <div class="row g-4" id="foodInfoParent"></div>
+        </div>
+    </section>
+    <!-- ~~~~~~~~~~~~~~~~ onSearch Content ~~~~~~~~~~~~ -->
+    <section class="on-search flex-grow-1 d-none" id="onSearch">
+        <div class="container">
+            <div class="search row g-2 text-black">
+                <div class="col-md-6 form-floating">
+                    <input type="text" class="form-control" id="searchWord" placeholder="Search by full word">
+                    <label for="searchWord">Search by full word</label>
+                </div>
+                <div class="col-md-6 form-floating">
+                    <input type="text" class="form-control" id="searchFirstLetter" maxlength="1"
+                        placeholder="Search by first letter">
+                    <label for="searchFirstLetter">Search by first letter</label>
+                </div>
+            </div>
+
+            <div class="search-content main-content">
+                <div class="row g-4" id="foodCardSearchParent"></div>
+            </div>
+        </div>
+    </section>
+    <!-- ~~~~~~~~~~~~~~~~ Contact Us ~~~~~~~~~~~~~~~~~~ -->
+    <section class="contact-form flex-grow-1 d-none" id="contactForm">
+        <div class="container">
+            <div class="form-wrapper card p-4">
+                <form class="needs-validation" novalidate>
+                    <div class="row row1 g-2 text-black mb-2">
+                        <div class="col-md-6 form-floating">
+                            <input type="text" class="form-control" id="nameInput" placeholder="Enter Your Name"
+                                required minlength="1" pattern="^[a-zA-Z\s]+$">
+                            <label for="nameInput">Name</label>
+                            <div class="invalid-feedback">
+                                Please enter your name.
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-floating">
+                            <input type="email" class="form-control" id="emailInput" placeholder="Enter Your Email"
+                                required pattern="[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}">
+                            <label for="emailInput">Email address</label>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row2 g-2 text-black mb-2">
+                        <div class="col-md-6 form-floating">
+                            <input type="tel" class="form-control" id="phoneInput" placeholder="Enter Your Number"
+                                required pattern="[0-9]{11}">
+                            <label for="phoneInput">Phone Number</label>
+                            <div class="invalid-feedback">
+                                Please enter a valid phone number (10 digits).
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-floating">
+                            <input type="number" class="form-control" id="ageInput" placeholder="Enter Your Age"
+                                required min="6">
+                            <label for="ageInput">Age</label>
+                            <div class="invalid-feedback">
+                                Age must be 6 or greater.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row3 g-2 text-black mb-2">
+                        <div class="col-md-6 form-floating">
+                            <input type="password" class="form-control" id="passwordInput"
+                                placeholder="Enter Your Password" required pattern=".{6,}">
+                            <label for="passwordInput">Password</label>
+                            <div class="invalid-feedback">
+                                Password must be at least 6 characters.
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-floating">
+                            <input type="password" class="form-control" id="repasswordInput"
+                                placeholder="Retype Your Password" required>
+                            <label for="repasswordInput">rePassword</label>
+                            <div class="invalid-feedback">
+                                Passwords must match.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-btn text-center">
+                        <button class="btn btn-primary" type="submit" id="submitButton" disabled>Sumbit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- ~~~~~~~~~~~~~~~~ Loading Screen ~~~~~~~~~~~~~~ -->
+    <section class="loading-screen flex-grow-1" id="loadingScreen">
+        <div class="container">
+            <span class="loader"></span>
+        </div>
+    </section>
+    <!-- |=============================================| Bootstrap JS |========================================| -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- |=============================================| jQuery JS |===========================================| -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- |=============================================| Main JS |=============================================| -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
